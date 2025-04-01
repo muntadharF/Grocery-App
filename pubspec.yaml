@@ -49,6 +49,9 @@ dependencies:
   # Responsive UI scaling
   flutter_screenutil: ^5.9.3
 
+  # plugin for reading and writing simple key-value pairs
+  shared_preferences: ^2.5.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -4,7 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/app_constants/app_assets.dart';
 import '../../core/app_constants/app_strings.dart';
 import '../../core/app_constants/app_text_styles.dart';
+import '../../core/helpers/shared_pref_helper.dart';
 import '../../core/helpers/spacing_helper.dart';
+import '../../core/routing/app_screens.dart';
 import '../../core/shared/app_btn.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -13,11 +15,11 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [_buildBackgroundImage(), _buildContent()]),
+      body: Stack(children: [_buildBackgroundImage(), _buildContent(context)]),
     );
   }
 
-  Align _buildContent() {
+  Align _buildContent(context) {
     return Align(
       alignment: Alignment(0, 0.7),
       child: Column(
@@ -31,9 +33,19 @@ class OnboardingScreen extends StatelessWidget {
           _buildSubtitle(),
 
           verticalSpace(32),
-          AppBtn(text: 'Get Started', onPressed: () {}),
+          _buildOnboardingBtn(context),
         ],
       ),
+    );
+  }
+
+  AppBtn _buildOnboardingBtn(context) {
+    return AppBtn(
+      text: AppStrings.onboardingBtnText,
+      onPressed: () async {
+        await SharedPrefHelper.setData(SharedPrefKeys.onboardingComplete, true);
+        Navigator.pushReplacementNamed(context, AppScreens.logInScreen);
+      },
     );
   }
 

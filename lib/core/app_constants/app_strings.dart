@@ -8,4 +8,5 @@ class AppStrings {
   // Onboarding screen
   static const String onboardingTitle = 'Welcome\nto our store';
   static const String onboardingSubtitle = 'Ger your groceries in as fast as one hour';
+  static const String onboardingBtnText = 'Get Started';
 }
