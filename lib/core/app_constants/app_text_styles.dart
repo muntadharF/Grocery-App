@@ -16,6 +16,12 @@ class ApptTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle font13GreyNormal = TextStyle(
+    fontSize: 13.sp,
+    color: Colors.grey,
+    fontWeight: FontWeight.normal,
+  );
+
   static TextStyle font14WhiteBold = TextStyle(
     fontSize: 14.sp,
     color: Colors.white,
@@ -31,6 +37,12 @@ class ApptTextStyles {
   static TextStyle font24BlackSemiBold = TextStyle(
     fontSize: 24.sp,
     color: Colors.black,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle font40WhiteSemiBold = TextStyle(
+    fontSize: 40.sp,
+    color: Colors.white,
     fontWeight: FontWeight.w600,
   );
 }

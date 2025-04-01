@@ -1,5 +1,5 @@
 class AppScreens {
   AppScreens._();
 
-  static const String home = '/';
+  static const String onboardingScreen = '/';
 }
