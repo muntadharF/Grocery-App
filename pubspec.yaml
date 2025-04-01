@@ -52,6 +52,9 @@ dependencies:
   # plugin for reading and writing simple key-value pairs
   shared_preferences: ^2.5.3
 
+  # Customize Flutter's default white native splash screen
+  flutter_native_splash: ^2.4.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
