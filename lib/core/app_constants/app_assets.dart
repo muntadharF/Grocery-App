@@ -2,6 +2,9 @@
 class AppAssets {
   AppAssets._();
 
-  // home screen
-  static const String avatarImage = 'assets/images/avatar_img.png';
+  // App assets
+  static const String appLogo = 'assets/svgs/app_logo.svg';
+
+  // Onboarding assets
+  static const String backgroundImg = 'assets/images/onboarding_img.png';
 }

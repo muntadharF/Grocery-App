@@ -38,6 +38,7 @@ grocery_app/
 - **flutter_screenutil** => Responsive UI scaling.  
 - **get_it** => Service locator for dependency injection.  
 - **intl** => Internationalization and Number Formatting.  
+- **shared_preferences** => Plugin for reading and writing simple key-value pairs  
 
 ---
 
