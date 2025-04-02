@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'core/app_constants/app_colors.dart';
 import 'core/app_constants/app_strings.dart';
 import 'core/di/dependency_injection.dart';
 import 'core/helpers/shared_pref_helper.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true, // Supports split-screen and multi-window mode
       builder: (_, child) {
         return GetMaterialApp(
+          theme: ThemeData(
+            colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
+          ),
           initialRoute:
               isOnboardingComplete
                   ? AppScreens.logInScreen

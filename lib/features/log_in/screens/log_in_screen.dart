@@ -1,12 +1,104 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/app_constants/app_assets.dart';
+import '../../../core/app_constants/app_colors.dart';
+import '../../../core/app_constants/app_strings.dart';
+import '../../../core/app_constants/app_text_styles.dart';
+import '../../../core/helpers/spacing_helper.dart';
+import '../../../core/shared/app_colorful_logo.dart';
+import '../widgets/log_in_form.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SizedBox.expand(child: Center(child: Text('Log in Screen ...'))),
+    return Scaffold(
+      body: Stack(
+        children: [
+          _buildBackgroundTopBar(),
+          const AppColorfulLogo(),
+          _buildBackgroundBottomBar(),
+          _buildContent(context),
+        ],
+      ),
+    );
+  }
+
+  SingleChildScrollView _buildContent(BuildContext context) {
+    return SingleChildScrollView(
+      child: SizedBox(
+        height: MediaQuery.sizeOf(context).height,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildTitle(),
+              verticalSpace(4),
+              _buildSubtitle(),
+              verticalSpace(32),
+
+              const LogInForm(),
+              verticalSpace(24),
+              _buildFooterTexts(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Center _buildFooterTexts() {
+    return Center(
+      child: Text.rich(
+        TextSpan(
+          text: AppStrings.logInDontHaveAccount,
+          style: ApptTextStyles.font12Black600Normal,
+          children: [
+            TextSpan(
+              text: AppStrings.signUpText,
+              style: ApptTextStyles.font12Black600Normal.copyWith(
+                color: AppColors.primaryColor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Text _buildSubtitle() {
+    return Text(
+      AppStrings.logInSubtitle,
+      style: ApptTextStyles.font13GreyNormal,
+    );
+  }
+
+  Text _buildTitle() {
+    return Text(
+      AppStrings.logInTitle,
+      style: ApptTextStyles.font24BlackSemiBold,
+    );
+  }
+
+  Positioned _buildBackgroundBottomBar() {
+    return Positioned(
+      bottom: 0,
+      right: 0,
+      left: 0,
+      child: Image.asset(AppAssets.backgroundBottomBar, fit: BoxFit.cover),
+    );
+  }
+
+  Positioned _buildBackgroundTopBar() {
+    return Positioned(
+      top: 0,
+      right: 0,
+      left: 0,
+      child: Image.asset(AppAssets.backgroundTopBar, fit: BoxFit.cover),
     );
   }
 }

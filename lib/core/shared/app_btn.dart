@@ -12,22 +12,19 @@ class AppBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: TextButton(
-        onPressed: onPressed,
-        style: TextButton.styleFrom(
-          minimumSize: Size(double.infinity, 54.h),
-          maximumSize: Size(double.infinity, 54.h),
-          backgroundColor: AppColors.primaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(18.r)),
-          ),
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        minimumSize: Size(double.infinity, 54.h),
+        maximumSize: Size(double.infinity, 54.h),
+        backgroundColor: AppColors.primaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(18.r)),
         ),
-        child: Text(
-          text,
-          style: ApptTextStyles.font40WhiteSemiBold.copyWith(fontSize: 16.sp),
-        ),
+      ),
+      child: Text(
+        text,
+        style: ApptTextStyles.font40WhiteSemiBold.copyWith(fontSize: 16.sp),
       ),
     );
   }

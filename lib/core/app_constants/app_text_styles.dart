@@ -10,6 +10,12 @@ class ApptTextStyles {
     fontWeight: FontWeight.normal,
   );
 
+  static TextStyle font12Black600Normal = TextStyle(
+    fontSize: 12.sp,
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle font12GreyMedium = TextStyle(
     fontSize: 12.sp,
     color: Colors.grey,
@@ -22,10 +28,22 @@ class ApptTextStyles {
     fontWeight: FontWeight.normal,
   );
 
+  static TextStyle font14Grey600Semibold = TextStyle(
+    fontSize: 14.sp,
+    color: Colors.grey.shade600,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle font14WhiteBold = TextStyle(
     fontSize: 14.sp,
     color: Colors.white,
     fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle font15BlackMedium = TextStyle(
+    fontSize: 15.sp,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle font18WhiteBold = TextStyle(
