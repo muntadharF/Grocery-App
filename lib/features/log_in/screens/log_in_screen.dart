@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery_app/core/routing/app_screens.dart';
 
 import '../../../core/app_constants/app_assets.dart';
 import '../../../core/app_constants/app_colors.dart';
 import '../../../core/app_constants/app_strings.dart';
 import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/helpers/spacing_helper.dart';
+import '../../../core/routing/app_screens.dart';
 import '../../../core/shared/app_colorful_logo.dart';
 import '../widgets/log_in_form.dart';
 
@@ -31,6 +31,7 @@ class LogInScreen extends StatelessWidget {
   SingleChildScrollView _buildContent(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -58,15 +59,15 @@ class LogInScreen extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           text: AppStrings.logInDontHaveAccount,
-          style: ApptTextStyles.font12Black600Normal,
+          style: ApptTextStyles.font12BlackSemiBold,
           children: [
             TextSpan(
               text: AppStrings.signUpText,
-              style: ApptTextStyles.font12Black600Normal.copyWith(
+              style: ApptTextStyles.font12BlackSemiBold.copyWith(
                 color: AppColors.primaryColor,
               ),
               recognizer: TapGestureRecognizer()..onTap = () {
-                Navigator.pushNamed(context, AppScreens.signUpScreen);
+                Navigator.pushReplacementNamed(context, AppScreens.signUpScreen);
               },
             ),
           ],
