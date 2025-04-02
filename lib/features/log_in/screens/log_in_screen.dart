@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery_app/core/routing/app_screens.dart';
 
 import '../../../core/app_constants/app_assets.dart';
 import '../../../core/app_constants/app_colors.dart';
@@ -43,7 +45,7 @@ class LogInScreen extends StatelessWidget {
 
               const LogInForm(),
               verticalSpace(24),
-              _buildFooterTexts(),
+              _buildFooterTexts(context),
             ],
           ),
         ),
@@ -51,7 +53,7 @@ class LogInScreen extends StatelessWidget {
     );
   }
 
-  Center _buildFooterTexts() {
+  Center _buildFooterTexts(context) {
     return Center(
       child: Text.rich(
         TextSpan(
@@ -63,6 +65,9 @@ class LogInScreen extends StatelessWidget {
               style: ApptTextStyles.font12Black600Normal.copyWith(
                 color: AppColors.primaryColor,
               ),
+              recognizer: TapGestureRecognizer()..onTap = () {
+                Navigator.pushNamed(context, AppScreens.signUpScreen);
+              },
             ),
           ],
         ),
