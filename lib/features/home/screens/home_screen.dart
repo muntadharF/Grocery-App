@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:grocery_app/core/app_constants/app_assets.dart';
+import 'package:grocery_app/core/helpers/spacing_helper.dart';
 
 import '../../../core/local_data/app_menu.dart';
 import '../widgets/app_bottom_nav_bar.dart';
@@ -45,7 +48,9 @@ class ShopScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // logo
+          verticalSpace(8),
+          _buildColorfulLogo(),
+
           // location (icon + Text.rich)
           // search box
           // banner
@@ -61,6 +66,17 @@ class ShopScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Align _buildColorfulLogo() {
+    return Align(
+          alignment: Alignment.center,
+          child: SvgPicture.asset(
+            AppAssets.appColorfulLogo,
+            width: 28.w,
+            height: 28.h,
+          ),
+        );
   }
 }
 
