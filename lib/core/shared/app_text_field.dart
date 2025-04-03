@@ -8,17 +8,18 @@ class AppTextField extends StatelessWidget {
     required this.hintText,
     required this.controller,
     this.suffixIcon,
-    this.isObscureText,
+    this.isObscureText, this.validator,
   });
 
   final TextEditingController controller;
   final String hintText;
   final Widget? suffixIcon;
   final bool? isObscureText;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       cursorColor: Colors.grey,
       obscureText: isObscureText ?? false,
@@ -30,6 +31,7 @@ class AppTextField extends StatelessWidget {
         enabledBorder: _buildUnderlineBorder(),
         focusedBorder: _buildUnderlineBorder(),
       ),
+      validator: validator,
     );
   }
 
