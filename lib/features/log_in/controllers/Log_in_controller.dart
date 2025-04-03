@@ -9,6 +9,7 @@ class LogInController extends GetxController {
   RxBool isLoggedIn = false.obs;
   RxBool isObscureText = true.obs;
   final formKey = GlobalKey<FormState>();
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 

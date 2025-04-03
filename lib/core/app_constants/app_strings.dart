@@ -21,4 +21,21 @@ class AppStrings {
   static const String logInDontHaveAccount = 'Don’t have an account?';
   
   static const String signUpText = ' Sign Up';
+  static const String logInText = ' Log In';
+
+  // Sign Up screen
+  static const String signUpTitle = 'Sign Up';
+  static const String signUpSubtitle = 'Enter your credentials to continue';
+  static const String signUpUsernameLabel = 'Username';
+  static const String signUpUsernameHintText = 'Enter your username please';
+  static const String signUpEmailLabel = 'Email';
+  static const String signUpEmailHintText = 'Enter your email please';
+  static const String signUpPasswordLabel = 'Password';
+  static const String signUpPasswordHintText = 'Enter your password please';
+  static const String signUpAlreadyHaveAccount = 'Already have an account?';
+  static const String signUpAgreeText = 'By continuing you agree to our';
+  static const String signUpTermsText = ' Terms of Service';
+  static const String signUpAndText = ' and';
+  static const String signUpPolicyText = ' Privacy Policy.';
+  
 }
