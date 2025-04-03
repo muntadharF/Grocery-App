@@ -33,9 +33,7 @@ class LogInForm extends StatelessWidget {
           verticalSpace(12),
           ForgotPasswordBtn(),
           verticalSpace(24),
-          Container(
-            alignment: Alignment.center,
-            child: AppBtn(text: AppStrings.logInTitle, onPressed: () {})),
+          AppBtn(text: AppStrings.logInTitle, onPressed: () {}),
         ],
       ),
     );

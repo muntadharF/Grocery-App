@@ -9,10 +9,10 @@ import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/routing/app_screens.dart';
 import '../../../core/shared/app_colorful_logo.dart';
-import '../widgets/log_in_form.dart';
+import '../widgets/sign_up_form.dart';
 
-class LogInScreen extends StatelessWidget {
-  const LogInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,23 +28,23 @@ class LogInScreen extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView _buildContent(BuildContext context) {
-    return SingleChildScrollView(
+   _buildContent(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 172.h, left: 20.w, right: 20.w),
       child: SizedBox(
         width: MediaQuery.sizeOf(context).width,
         height: MediaQuery.sizeOf(context).height,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _buildTitle(),
               verticalSpace(4),
               _buildSubtitle(),
               verticalSpace(32),
 
-              const LogInForm(),
+              const SignUpForm(),
               verticalSpace(24),
               _buildFooterTexts(context),
             ],
@@ -58,17 +58,19 @@ class LogInScreen extends StatelessWidget {
     return Center(
       child: Text.rich(
         TextSpan(
-          text: AppStrings.logInDontHaveAccount,
+          text: AppStrings.signUpAlreadyHaveAccount,
           style: ApptTextStyles.font12BlackSemiBold,
           children: [
             TextSpan(
-              text: AppStrings.signUpText,
+              text: AppStrings.logInText,
               style: ApptTextStyles.font12BlackSemiBold.copyWith(
                 color: AppColors.primaryColor,
               ),
-              recognizer: TapGestureRecognizer()..onTap = () {
-                Navigator.pushReplacementNamed(context, AppScreens.signUpScreen);
-              },
+              recognizer:
+                  TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.pushReplacementNamed(context, AppScreens.logInScreen);
+                    },
             ),
           ],
         ),
@@ -78,14 +80,14 @@ class LogInScreen extends StatelessWidget {
 
   Text _buildSubtitle() {
     return Text(
-      AppStrings.logInSubtitle,
+      AppStrings.signUpSubtitle,
       style: ApptTextStyles.font13GreyNormal,
     );
   }
 
   Text _buildTitle() {
     return Text(
-      AppStrings.logInTitle,
+      AppStrings.signUpTitle,
       style: ApptTextStyles.font24BlackSemiBold,
     );
   }
