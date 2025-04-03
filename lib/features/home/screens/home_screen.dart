@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/local_data/app_menu.dart';
 import '../widgets/app_bottom_nav_bar.dart';
@@ -21,7 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: screens[_selectedIndex].screen,
+      body: SafeArea(
+        child: SizedBox.expand(child: screens[_selectedIndex].screen),
+      ),
       bottomNavigationBar: AppBottomNavBar(
         selectedIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
@@ -36,7 +39,28 @@ class ShopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Shop Screen', style: TextStyle(fontSize: 24)));
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // logo
+          // location (icon + Text.rich)
+          // search box
+          // banner
+
+          // Row( exclusive offer title (Text) + see all (text) ) title || align with text => X2
+          // Row (exclusive offer items)
+
+          // Row( Best Selling title (Text) + see all (text) ) title || align with text => X2
+          // Row (Best Selling items)
+
+          // Row( groceries title (Text) + see all (text) ) title || align with text => X2
+          // Row (Groceries boxex)
+        ],
+      ),
+    );
   }
 }
 
