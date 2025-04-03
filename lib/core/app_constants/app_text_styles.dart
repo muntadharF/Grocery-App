@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'app_colors.dart';
+
 class ApptTextStyles {
   ApptTextStyles._();
 
@@ -44,6 +46,12 @@ class ApptTextStyles {
     fontSize: 15.sp,
     color: Colors.black,
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle font15DarkGreySemiBold = TextStyle(
+    fontSize: 15.sp,
+    color: AppColors.darkGrey,
+    fontWeight: FontWeight.w600,
   );
 
   static TextStyle font18WhiteBold = TextStyle(

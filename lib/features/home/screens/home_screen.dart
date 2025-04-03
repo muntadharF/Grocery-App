@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grocery_app/core/app_constants/app_assets.dart';
-import 'package:grocery_app/core/helpers/spacing_helper.dart';
+import 'package:grocery_app/core/app_constants/app_colors.dart';
+import 'package:grocery_app/core/app_constants/app_text_styles.dart';
 
+import '../../../core/app_constants/app_assets.dart';
+import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/local_data/app_menu.dart';
 import '../widgets/app_bottom_nav_bar.dart';
 
@@ -36,12 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// Shop screen is Home Screen
+/// Shop screen is the body for Home Screen
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final double fullWidth = MediaQuery.sizeOf(context).width;
+
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -51,7 +55,9 @@ class ShopScreen extends StatelessWidget {
           verticalSpace(8),
           _buildColorfulLogo(),
 
-          // location (icon + Text.rich)
+          verticalSpace(6),
+          _buildLocationRow(fullWidth),
+
           // search box
           // banner
 
@@ -68,15 +74,37 @@ class ShopScreen extends StatelessWidget {
     );
   }
 
+  SizedBox _buildLocationRow(double fullWidth) {
+    return SizedBox(
+      width: fullWidth * 0.9,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.location_on, color: AppColors.darkGrey, size: 24.r),
+          horizontalSpace(4),
+          Flexible(
+            child: Text(
+              'Baghdad, Mansour',
+              style: ApptTextStyles.font15DarkGreySemiBold,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Align _buildColorfulLogo() {
     return Align(
-          alignment: Alignment.center,
-          child: SvgPicture.asset(
-            AppAssets.appColorfulLogo,
-            width: 28.w,
-            height: 28.h,
-          ),
-        );
+      alignment: Alignment.center,
+      child: SvgPicture.asset(
+        AppAssets.appColorfulLogo,
+        width: 28.w,
+        height: 28.h,
+      ),
+    );
   }
 }
 
