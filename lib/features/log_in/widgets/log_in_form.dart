@@ -6,7 +6,7 @@ import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/di/dependency_injection.dart';
 import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/shared/app_btn.dart';
-import '../../../core/shared/app_text_field.dart';
+import '../../../core/shared/app_text_form_field.dart';
 import '../controllers/Log_in_controller.dart';
 import 'forgot_password_btn.dart';
 
@@ -48,8 +48,8 @@ class LogInForm extends StatelessWidget {
     );
   }
 
-  AppTextField _buildEmailTextField(LogInController logInController) {
-    return AppTextField(
+  AppTextFormField _buildEmailTextField(LogInController logInController) {
+    return AppTextFormField(
       controller: logInController.emailController,
       hintText: AppStrings.logInEmailHintText,
       validator: logInController.validateEmail,
@@ -58,7 +58,7 @@ class LogInForm extends StatelessWidget {
 
   Obx _buildPasswordTextField(LogInController logInController) {
     return Obx(
-      () => AppTextField(
+      () => AppTextFormField(
         controller: logInController.passwordController,
         hintText: AppStrings.logInPasswordHintText,
         validator: logInController.validatePassword,

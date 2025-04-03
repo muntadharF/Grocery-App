@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../app_constants/app_text_styles.dart';
 
-class AppTextField extends StatelessWidget {
-  const AppTextField({
+class AppTextFormField extends StatelessWidget {
+  const AppTextFormField({
     super.key,
     required this.hintText,
     required this.controller,

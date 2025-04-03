@@ -6,7 +6,7 @@ import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/di/dependency_injection.dart';
 import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/shared/app_btn.dart';
-import '../../../core/shared/app_text_field.dart';
+import '../../../core/shared/app_text_form_field.dart';
 import '../controllers/sign_up_controller.dart';
 import 'terms_and_policy.dart';
 
@@ -42,15 +42,15 @@ class SignUpForm extends StatelessWidget {
     );
   }
 
-  AppTextField _buildUsernameTextField(SignUpController signUpController) {
-    return AppTextField(
+  AppTextFormField _buildUsernameTextField(SignUpController signUpController) {
+    return AppTextFormField(
       controller: signUpController.usernameController,
       hintText: AppStrings.signUpUsernameHintText,
     );
   }
 
-  AppTextField _buildEmailTextField(SignUpController signUpController) {
-    return AppTextField(
+  AppTextFormField _buildEmailTextField(SignUpController signUpController) {
+    return AppTextFormField(
       controller: signUpController.emailController,
       hintText: AppStrings.signUpEmailHintText,
     );
@@ -58,7 +58,7 @@ class SignUpForm extends StatelessWidget {
 
   Obx _buildPasswordTextField(SignUpController signUpController) {
     return Obx(
-      () => AppTextField(
+      () => AppTextFormField(
         controller: signUpController.passwordController,
         hintText: AppStrings.logInPasswordHintText,
         isObscureText: signUpController.isObscureText.value,
