@@ -17,15 +17,15 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
 
   // Fetch onboarding status before running the app
-  bool isOnboardingComplete = await getOnboardingStatus();
+  String initialRoute = await getInitialRoute();
 
-  runApp(MyApp(isOnboardingComplete: isOnboardingComplete));
+  runApp(MyApp(initialRoute: initialRoute));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.isOnboardingComplete});
+  const MyApp({super.key, required this.initialRoute});
 
-  final bool isOnboardingComplete;
+  final String initialRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +38,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.light(primary: AppColors.primaryColor),
           ),
-          initialRoute:
-              isOnboardingComplete
-                  ? AppScreens.logInScreen
-                  : AppScreens.onboardingScreen,
+          initialRoute: initialRoute,
           title: AppStrings.appName,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRoutes.onGenerateRoute,
@@ -51,8 +48,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/// Fetches onboarding status from SharedPreferences
-Future<bool> getOnboardingStatus() async {
-  return await SharedPrefHelper.getBool(SharedPrefKeys.onboardingComplete) ??
+Future<String> getInitialRoute() async {
+  var isOnboardingComplete =
+      await SharedPrefHelper.getBool(SharedPrefKeys.onboardingComplete) ??
       false;
+
+  if (isOnboardingComplete) {
+    var isUserLoggedIn =
+        await SharedPrefHelper.getBool(SharedPrefKeys.userLoggedIn) ?? false;
+
+    if (isUserLoggedIn) {
+      return AppScreens.homeScreen;
+    }
+
+    return AppScreens.logInScreen;
+  }
+
+  return AppScreens.onboardingScreen;
 }

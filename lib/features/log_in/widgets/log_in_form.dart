@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import '../../../core/app_constants/app_strings.dart';
 import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/di/dependency_injection.dart';
+import '../../../core/helpers/shared_pref_helper.dart';
 import '../../../core/helpers/spacing_helper.dart';
+import '../../../core/routing/app_screens.dart';
 import '../../../core/shared/app_btn.dart';
 import '../../../core/shared/app_text_form_field.dart';
 import '../controllers/Log_in_controller.dart';
@@ -39,7 +41,8 @@ class LogInForm extends StatelessWidget {
               await logInController.logIn();
 
               if (logInController.isLoggedIn.value) {
-                // TODO: Navigate to Home Screen
+                await SharedPrefHelper.setData(SharedPrefKeys.userLoggedIn, true);
+                Navigator.pushReplacementNamed(context, AppScreens.homeScreen);
               }
             },
           ),

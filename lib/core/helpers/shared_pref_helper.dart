@@ -74,4 +74,5 @@ class SharedPrefKeys {
 
   static const String token = 'token';
   static const String onboardingComplete = 'onboarding_complete';
+  static const String userLoggedIn = 'user_logged_in';
 }
