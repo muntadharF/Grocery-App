@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 
 import '../../../core/app_constants/app_strings.dart';
 import '../../../core/app_constants/app_text_styles.dart';
@@ -33,7 +33,16 @@ class LogInForm extends StatelessWidget {
           verticalSpace(12),
           ForgotPasswordBtn(),
           verticalSpace(24),
-          AppBtn(text: AppStrings.logInTitle, onPressed: () {}),
+          AppBtn(
+            text: AppStrings.logInTitle,
+            onPressed: () async {
+              await logInController.logIn();
+
+              if (logInController.isLoggedIn.value) {
+                // TODO: Navigate to Home Screen
+              }
+            },
+          ),
         ],
       ),
     );
@@ -43,6 +52,7 @@ class LogInForm extends StatelessWidget {
     return AppTextField(
       controller: logInController.emailController,
       hintText: AppStrings.logInEmailHintText,
+      validator: logInController.validateEmail,
     );
   }
 
@@ -51,6 +61,7 @@ class LogInForm extends StatelessWidget {
       () => AppTextField(
         controller: logInController.passwordController,
         hintText: AppStrings.logInPasswordHintText,
+        validator: logInController.validatePassword,
         isObscureText: logInController.isObscureText.value,
         suffixIcon: IconButton(
           onPressed: () => logInController.toggleObscureText(),

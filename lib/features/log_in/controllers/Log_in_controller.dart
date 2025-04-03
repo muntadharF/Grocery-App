@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/helpers/validation_helper.dart';
+
 class LogInController extends GetxController {
+  RxBool isLoggedIn = false.obs;
   RxBool isObscureText = true.obs;
   final formKey = GlobalKey<FormState>();
 
@@ -19,5 +22,21 @@ class LogInController extends GetxController {
 
   void toggleObscureText() {
     isObscureText.value = !isObscureText.value;
+  }
+
+  String? validateEmail(String? value) {
+    return ValidationHelper.validateEmail(value);
+  }
+
+  String? validatePassword(String? value) {
+    return ValidationHelper.validatePassword(value);
+  }
+
+  Future<void> logIn() async {
+    if (formKey.currentState?.validate() ?? false) {
+      isLoggedIn.value = true;
+    } else {
+      isLoggedIn.value = false;
+    }
   }
 }
