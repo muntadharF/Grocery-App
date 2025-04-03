@@ -26,12 +26,12 @@ class LogInScreen extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView _buildContent(BuildContext context) {
-    return SingleChildScrollView(
+   Padding _buildContent(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 172.h, left: 20.w, right: 20.w),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
