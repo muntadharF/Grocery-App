@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grocery_app/core/app_constants/app_colors.dart';
-import 'package:grocery_app/core/app_constants/app_text_styles.dart';
 
 import '../../../core/app_constants/app_assets.dart';
+import '../../../core/app_constants/app_colors.dart';
+import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/local_data/app_menu.dart';
+import '../../../core/shared/app_search_field.dart';
 import '../widgets/app_bottom_nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,6 +58,9 @@ class ShopScreen extends StatelessWidget {
 
           verticalSpace(6),
           _buildLocationRow(fullWidth),
+
+          verticalSpace(16),
+          const AppSearchField(),
 
           // search box
           // banner

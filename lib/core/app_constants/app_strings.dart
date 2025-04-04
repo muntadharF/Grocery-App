@@ -38,4 +38,6 @@ class AppStrings {
   static const String signUpAndText = ' and';
   static const String signUpPolicyText = ' Privacy Policy.';
   
+  // Home screen
+  static const String searchHintText = 'Search Store';
 }
