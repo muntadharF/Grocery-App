@@ -60,6 +60,12 @@ class ApptTextStyles {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle font16BlackBold = TextStyle(
+    fontSize: 16.sp,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
+
   static TextStyle font18WhiteBold = TextStyle(
     fontSize: 18.sp,
     color: Colors.white,

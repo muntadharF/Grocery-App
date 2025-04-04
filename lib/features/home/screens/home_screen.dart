@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:grocery_app/core/app_constants/app_strings.dart';
-import 'package:grocery_app/features/home/widgets/top_banner.dart';
+import 'package:grocery_app/core/local_data/product.dart';
 
 import '../../../core/app_constants/app_assets.dart';
 import '../../../core/app_constants/app_colors.dart';
+import '../../../core/app_constants/app_strings.dart';
 import '../../../core/app_constants/app_text_styles.dart';
 import '../../../core/helpers/spacing_helper.dart';
 import '../../../core/local_data/app_menu.dart';
+import '../../../core/shared/app_product_item.dart';
 import '../../../core/shared/app_search_field.dart';
 import '../widgets/app_bottom_nav_bar.dart';
+import '../widgets/top_banner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -69,8 +71,7 @@ class ShopScreen extends StatelessWidget {
 
           verticalSpace(24),
           _buildLabelWithActionRow(AppStrings.exclusiveOfferLabel),
-
-          // Row( exclusive offer title (Text) + see all (text) ) title || align with text => X2
+          verticalSpace(8),
           // Row (exclusive offer items)
 
           // Row( Best Selling title (Text) + see all (text) ) title || align with text => X2
