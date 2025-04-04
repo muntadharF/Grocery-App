@@ -72,7 +72,7 @@ class ShopScreen extends StatelessWidget {
           verticalSpace(24),
           _buildLabelWithActionRow(AppStrings.exclusiveOfferLabel),
           verticalSpace(8),
-          // Row (exclusive offer items)
+          _buildExclusiveOfferProducts(),
 
           // Row( Best Selling title (Text) + see all (text) ) title || align with text => X2
           // Row (Best Selling items)
@@ -80,6 +80,58 @@ class ShopScreen extends StatelessWidget {
           // Row( groceries title (Text) + see all (text) ) title || align with text => X2
           // Row (Groceries boxex)
         ],
+      ),
+    );
+  }
+
+  SizedBox _buildExclusiveOfferProducts() {
+    final List<Product> products = <Product>[
+      Product(
+        img: 'assets/images/bananas.png',
+        title: 'Organic Bananas',
+        price: 4.99,
+        review: 3,
+        description:
+            'Officia minim qui aliqua Lorem cillum aliqua incididunt excepteur aute exercitation qui exercitation proident. Labore deserunt sit eiusmod laborum ut ullamco. Ut laboris exercitation ullamco nostrud ea ex et dolor Lorem cupidatat.',
+        weight: '7pcs',
+      ),
+
+      Product(
+        img: 'assets/images/apples.png',
+        title: 'Red Apple',
+        price: 4.99,
+        review: 3,
+        description:
+            'Enim amet sint sunt incididunt do veniam adipisicing. Adipisicing dolore sunt incididunt nisi eu dolor ullamco adipisicing aute ea velit. Pariatur laboris Lorem tempor ad esse nostrud ea sit dolore tempor consequat adipisicing occaecat duis. Laboris aliqua ea est proident cillum do. In velit consectetur enim dolore. In qui cupidatat consectetur ullamco id nostrud.',
+        weight: '1KG',
+      ),
+
+      Product(
+        img: 'assets/images/bananas.png',
+        title: 'Organic Bananas',
+        price: 4.99,
+        review: 3,
+        description:
+            'Officia minim qui aliqua Lorem cillum aliqua incididunt excepteur aute exercitation qui exercitation proident. Labore deserunt sit eiusmod laborum ut ullamco. Ut laboris exercitation ullamco nostrud ea ex et dolor Lorem cupidatat.',
+        weight: '7pcs',
+      ),
+    ];
+
+    return SizedBox(
+      height: 228.h,
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        scrollDirection: Axis.horizontal,
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          double rightPadding = (products.length == index + 1) ? 0 : 14.w;
+
+          return Padding(
+            padding: EdgeInsets.only(right: rightPadding),
+            child: AppProductItem(product: products[index]),
+          );
+        },
       ),
     );
   }
