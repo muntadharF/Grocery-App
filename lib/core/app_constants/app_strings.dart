@@ -40,4 +40,6 @@ class AppStrings {
   
   // Home screen
   static const String searchHintText = 'Search Store';
+  static const String exclusiveOfferLabel = 'Exclusive Offer';
+  static const String seeAllSubLabel = 'See all';
 }

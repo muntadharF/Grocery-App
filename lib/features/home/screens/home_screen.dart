@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grocery_app/core/app_constants/app_strings.dart';
 import 'package:grocery_app/features/home/widgets/top_banner.dart';
 
 import '../../../core/app_constants/app_assets.dart';
@@ -66,6 +67,9 @@ class ShopScreen extends StatelessWidget {
           verticalSpace(20),
           const TopBanner(),
 
+          verticalSpace(24),
+          _buildLabelWithActionRow(AppStrings.exclusiveOfferLabel),
+
           // Row( exclusive offer title (Text) + see all (text) ) title || align with text => X2
           // Row (exclusive offer items)
 
@@ -76,6 +80,29 @@ class ShopScreen extends StatelessWidget {
           // Row (Groceries boxex)
         ],
       ),
+    );
+  }
+
+  Row _buildLabelWithActionRow(String label) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: ApptTextStyles.font24BlackSemiBold.copyWith(
+            fontSize: 20.sp,
+            letterSpacing: -0.3,
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            AppStrings.seeAllSubLabel,
+            style: ApptTextStyles.font13PrimaryColorSemiBold,
+          ),
+        ),
+      ],
     );
   }
 

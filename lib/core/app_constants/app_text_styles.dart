@@ -30,6 +30,12 @@ class ApptTextStyles {
     fontWeight: FontWeight.normal,
   );
 
+  static TextStyle font13PrimaryColorSemiBold = TextStyle(
+    fontSize: 13.sp,
+    color: AppColors.primaryColor,
+    fontWeight: FontWeight.w600,
+  );
+
   static TextStyle font14Grey600Semibold = TextStyle(
     fontSize: 14.sp,
     color: Colors.grey.shade600,
