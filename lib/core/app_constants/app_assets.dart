@@ -15,4 +15,5 @@ class AppAssets {
 
   // Home assets
   static const String search = 'assets/svgs/search.svg';
+  static const String freshVegetablesBanner = 'assets/images/fresh_vegetables_banner.png';
 }

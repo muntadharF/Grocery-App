@@ -13,7 +13,6 @@ class AppSearchController extends GetxController {
 
   void _onTextChanged() {
     showClearIcon.value = textController.text.isNotEmpty;
-    print(textController.text.isNotEmpty);
   }
 
   void clearText() {

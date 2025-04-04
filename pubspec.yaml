@@ -55,6 +55,9 @@ dependencies:
   # Customize Flutter's default white native splash screen
   flutter_native_splash: ^2.4.5
 
+  # Acarousel slider
+  carousel_slider: ^5.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,7 +84,6 @@ flutter:
   assets:
     - assets/svgs/
     - assets/images/
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
