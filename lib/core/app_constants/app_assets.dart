@@ -9,8 +9,11 @@ class AppAssets {
   static const String backgroundImg = 'assets/images/onboarding_img.png';
 
   // Log In assets
-  
   static const String appColorfulLogo = 'assets/svgs/app_colorful_logo.svg';
   static const String backgroundTopBar = 'assets/images/background_top_bar.png';
   static const String backgroundBottomBar = 'assets/images/background_bottom_bar.png';
+
+  // Home assets
+  static const String search = 'assets/svgs/search.svg';
+  static const String freshVegetablesBanner = 'assets/images/fresh_vegetables_banner.png';
 }
