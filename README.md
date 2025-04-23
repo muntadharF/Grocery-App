@@ -1,7 +1,7 @@
-# **🛒 Grocery App**
+# **🏫 School Management App**
 
-Welcome to the **Grocery App!** 🛍️<br>
-This app is designed to simplify your grocery shopping experience by offering an intuitive and seamless UI.
+Welcome to the **School Management App!** 🎓<br>
+This app is designed to streamline administrative and academic processes within schools through an intuitive interface and efficient features.
 
 ---
 
@@ -9,14 +9,14 @@ This app is designed to simplify your grocery shopping experience by offering an
 
 - 📅 **Development Duration:** Ongoing  
 - 💻 **Tech Stack:** Flutter & Dart  
-- 🔖 **Goal:** Build a grocery shopping app  
+- 🔖 **Goal:** Provide a complete digital solution for school administration, teachers, students, and parents  
 
 ---
 
 ## **📂 Project Structure**  
 
 ```
-grocery_app/
+school_management_app/
 │── lib/
 │   ├── core/
 │   ├── features/
@@ -32,13 +32,12 @@ grocery_app/
 ---
 
 ## **📦 Packages Used**  
-
-- **get** => State management.  
+ 
 - **flutter_svg** => An SVG Rendering.  
-- **flutter_screenutil** => Responsive UI scaling.  
+- **intl** => Date/time formatting and localization.  
 - **get_it** => Service locator for dependency injection.  
-- **intl** => Internationalization and Number Formatting.  
-- **shared_preferences** => Plugin for reading and writing simple key-value pairs.  
+- **shared_preferences** => Store user session and simple app settings.  
+- **flutter_screenutil** => Ensures responsive layout across screen sizes.  
 - **flutter_native_splash** => Customize Flutter's default white native splash screen.  
 
 ---
@@ -47,11 +46,11 @@ grocery_app/
 
 1️⃣ **Clone the repo:**  
 ```bash
-git clone https://github.com/yourusername/grocery_app.git
+git clone https://github.com/yourusername/school_management_app.git
 ```
 2️⃣ **Navigate to the folder:**  
 ```bash
-cd grocery_app
+cd school_management_app
 ```
 3️⃣ **Install dependencies:**  
 ```bash
@@ -68,4 +67,5 @@ flutter run
 
 🚀 **Flutter** – Dart framework for UI development  
 🎨 **Figma** – UI design references  
-📌 **GitHub** – Version control & progress tracking  
+📌 **GitHub** – Version control & progress tracking <br>
+🔧 **Firebase** – Backend services (auth, database, etc.)
